@@ -1,0 +1,30 @@
+if __name__ == "__main__":
+    class Hw1Q1:
+        def timeConvert(input_second):
+            seconds = int(input_second)
+            # calculate each unit
+            minutes = seconds // 60
+            hours = minutes // 60
+            days = hours // 24
+            string = ""
+            # if Statements check how many of each unit, corrects grammer
+            if days == 1:
+                string = str(days) + " day "
+            elif days > 1:
+                string = str(days) + " days "
+            if hours - days * 24 == 1:
+                string += string + str(hours - days * 24) + " hour "
+            elif hours - days * 24 > 1:
+                string = string + str(hours - days * 24) + " hours "
+            if minutes - hours * 60 == 1:
+                string = string + str(minutes - hours * 60) + " minute "
+            elif minutes - hours * 60 > 1:
+                string = string + str(minutes - hours * 60) + " minutes "
+            if seconds - minutes * 60 == 1:
+                string = string + str(seconds - minutes * 60) + " seconds"
+            elif seconds - minutes * 60 > 1:
+                string = string + str(seconds - minutes * 60) + " seconds"
+            return string
+
+    input_second = input("How many seconds ")
+    print(Hw1Q1.timeConvert(input_second))
